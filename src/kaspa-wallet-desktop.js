@@ -169,7 +169,7 @@ export class KaspaWalletDesktop extends KaspaWalletMobile{
 					return html`<div class="tx-notification">
 						${n.compoundUTXOs?
 							html`${T('Compounding UTXOs...')}`:
-							i18n.t(`Preparing transaction for [n] KAS ....`)
+							i18n.t(`Preparing transaction for [n] KLS ....`)
 								.replace('[n]', this.formatKAS(n.amount))}
 					</div>`
 				})}
@@ -201,11 +201,11 @@ export class KaspaWalletDesktop extends KaspaWalletMobile{
   			<div class="balance-badge">
                 <div class="balance">
                     <span class="label" is="i18n-span">Available</span>
-                    <span class="value">${this.formatKAS(available)} KAS</span>
+                    <span class="value">${this.formatKAS(available)} KLS</span>
                 </div>
                 <div class="balance pending">
                     <span class="label-pending" is="i18n-span">Pending</span>
-                    <span class="value-pending">${this.formatKAS(pending)} KAS</span>
+                    <span class="value-pending">${this.formatKAS(pending)} KLS</span>
                 </div>
             </div>
 		`;

@@ -283,8 +283,9 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 		let PWAVersion = window.PWA?.version||'';
 
 		let donationAddresses = [
-			["Devfund donations:", "kaspa:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98"],
-			["Mining address:", "kaspa:pzhh76qc82wzduvsrd9xh4zde9qhp0xc8rl7qu2mvl2e42uvdqt75zrcgpm00"],
+			["Kaspa Devfund donations:", "kaspa:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98"],
+			["Kaspa Mining address:", "kaspa:pzhh76qc82wzduvsrd9xh4zde9qhp0xc8rl7qu2mvl2e42uvdqt75zrcgpm00"],
+			["Karlsen Devfund donations:", "karlsen:qzrq7v5jhsc5znvtfdg6vxg7dz5x8dqe4wrh90jkdnwehp6vr8uj7csdss2l7"],
 			//["KDX/WebWallet donations:", "kaspa:qrncjga8hej9q59q85ge5js6m4y97el6ahp3m87hyzqdtaq6pf0v7xek7x900"],
 		]
 
@@ -325,7 +326,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 				</div>
 				<div class="tab-content ${sCls('wallet')}" for="wallet">
 					<div class="wallet-ux">
-						<div class="badge" is="i18n-div">KASPA WALLET</div>
+						<div class="badge" is="i18n-div">KARLSEN WALLET</div>
 						${ PWAVersion ? html`<div class="badge"><span is="i18n-span">Version</span> ${PWAVersion}</div>` : '' }
 						<div class="badge"><span is="i18n-span">Status:</span> ${this.status}</div>
 						<div class="badge"><span is="i18n-span">Network:</span> ${(this.receiveAddress||"").split(":")[0]||""}</div>
@@ -369,7 +370,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 								<span is="i18n-span">DONATIONS</span>
 							</div>
 							<p is="i18n-p">
-								if you wish to further the development of the kaspa ecosystem, we accept kaspa donations at the following addresses:
+								if you wish to further the development of the kaspa and karlsen ecosystem, we accept donations at the following addresses:
 							</p>
 							${
 								donationAddresses.map((t) => {
@@ -390,12 +391,12 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 								<fa-icon icon="caret-right"></fa-icon>
 								<span is="i18n-span">DEVELOPER INFO</span>
 							</div>
-							<div class="badge"><span is="i18n-span">Kaspa Core:</span> ${window.PWA_MODULES['@kaspa/core-lib']}</div>
-							<div class="badge"><span is="i18n-span">Kaspa Wallet Framework:</span> ${window.PWA_MODULES['@kaspa/wallet']}</div>
+							<div class="badge"><span is="i18n-span">Kaspa Core 4 KLS:</span> ${window.PWA_MODULES['@kaspa/core-lib']}</div>
+							<div class="badge"><span is="i18n-span">Kaspa Wallet Framework 4 KLS:</span> ${window.PWA_MODULES['@kaspa/wallet']}</div>
 							<div class="badge"><span is="i18n-span">Kaspa gRPC:</span> ${window.PWA_MODULES['@kaspa/grpc']}</div>
 							<div class="badge"><span is="i18n-span">Kaspa gRPC Relay:</span> ${window.PWA_MODULES['@kaspa/grpc-web']}</div>
-							<div class="badge"><span is="i18n-span">Kaspa UX:</span> ${window.PWA_MODULES['@kaspa/ux']}</div>
-							<div class="badge"><span is="i18n-span">Flow UX:</span> ${window.PWA_MODULES['@aspectron/flow-ux']}</div>
+							<div class="badge"><span is="i18n-span">Kaspa UX 4 KLS:</span> ${window.PWA_MODULES['@kaspa/ux']}</div>
+							<div class="badge"><span is="i18n-span">Flow UX 4 KLS:</span> ${window.PWA_MODULES['@aspectron/flow-ux']}</div>
 						</flow-expandable>
 
 					</div>
@@ -405,9 +406,9 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 					${this.faucetStatus ? this.faucetStatus : html`
 
 						<div class="faucet-ux">
-							<div class="margin-bottom"  is="i18n-div">KASPA FAUCET</div>
+							<div class="margin-bottom"  is="i18n-div">KARLSEN FAUCET</div>
 							<div>${i18nFormat('Your IP is [n]', this.ip||"")}</div>
-							<div class="margin">${i18nHTMLFormat('You have <b>[n] KAS</b> available.', KAS(this.faucetFundsAvailable||0) )}</div>
+							<div class="margin">${i18nHTMLFormat('You have <b>[n] KLS</b> available.', KAS(this.faucetFundsAvailable||0) )}</div>
 
 							${this.faucetPeriod ? html`
 								<div class="margin-bottom">${i18nHTMLFormat('Additional funds will be<br/>available in [n]', FlowFormat.duration(this.faucetPeriod))}</div>
@@ -449,7 +450,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 						</div>
 						<table>
 							<tr><td is="i18n-td">COUNT</td><td>${inUseUTXOs.count}</td></tr>
-							<tr><td is="i18n-td">AMOUNT</td><td>${KAS(inUseUTXOs.satoshis||0)} KAS</td></tr>
+							<tr><td is="i18n-td">AMOUNT</td><td>${KAS(inUseUTXOs.satoshis||0)} KLS</td></tr>
 						</table>
 						<flow-btn class="center-btn primary v-margin"
 							@click="${this.showUTXOs}" i18n>Show UTXOs</flow-btn>
@@ -593,7 +594,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 	openAddressExplorer(address){
 		if (!address)
 			return
-		let url = `https://explorer.kaspa.org/addresses/${address}`;
+		let url = `https://explorer.karlsencoin.com/addresses/${address}`;
 
 		window.open(url);
 	}
@@ -610,15 +611,15 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 						<span class="value" is="i18n-span">SCANNING...</span>
 					</div>
 					<div class="balance pending">
-						<span class="label-pending">${T('PLEASE WAIT')} <span class="dots">${this.dots}</span> ${total ? this.formatKAS(total)+' KAS':''}</span>
+						<span class="label-pending">${T('PLEASE WAIT')} <span class="dots">${this.dots}</span> ${total ? this.formatKAS(total)+' KLS':''}</span>
 					</div>
 				` : html`
 					<div class="balance">
-						<span class="value">${this.formatKAS(available)} KAS</span>
+						<span class="value">${this.formatKAS(available)} KLS</span>
 					</div>
 					<div class="balance pending">
 						<span class="label-pending" is="i18n-span">Pending:</span>
-						<span class="value-pending">${this.formatKAS(pending)} KAS</span>
+						<span class="value-pending">${this.formatKAS(pending)} KLS</span>
 					</div>
 				`}
             </div>
