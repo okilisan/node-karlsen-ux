@@ -5,7 +5,7 @@ import {
 } from './flow-ux.js'
 export * from './flow-ux.js'
 import {
-	Deferred, GetTS, KAS, formatForMachine, formatForHuman,
+	Deferred, GetTS, KLS, formatForMachine, formatForHuman,
 	getLocalWallet, setLocalWallet, baseUrl, debug, MAX_UTXOS_THRESHOLD_COMPOUND,
 	getCacheFromStorage,
 	saveCacheToStorage, CONFIRMATION_COUNT, COINBASE_CFM_COUNT,
@@ -275,7 +275,7 @@ export class KarlsenWalletUI extends BaseElement{
 						${n.compoundUTXOs?
 							T(`Compounding UTXOs...`):
 							i18n.t(`Preparing transaction for [n] KLS ....`)
-							.replace('[n]', this.formatKAS(n.amount))}
+							.replace('[n]', this.formatKLS(n.amount))}
 					</div>`
 				})}
 				
@@ -299,7 +299,7 @@ export class KarlsenWalletUI extends BaseElement{
 						<div class="tx-title" slot="title">
 							<div class="tx-date flex">${tx.date}</div>
 							<div class="amount">
-								${tx.in?'':'-'}${this.formatKAS(tx.amount)} KLS
+								${tx.in?'':'-'}${this.formatKLS(tx.amount)} KLS
 							</div>
 						</div>
 						${ 0<=cfm&cfm<=COUNT? html`<flow-progressbar class="tx-progressbar" 
@@ -352,7 +352,7 @@ export class KarlsenWalletUI extends BaseElement{
 							`:''
 						}
 						<div class="tx-date" title="#${skip+i+1} Transaction">${tx.date}</div>
-						<div class="tx-amount">${tx.in?'':'-'}${KAS(tx.amount)} KLS</div>
+						<div class="tx-amount">${tx.in?'':'-'}${KLS(tx.amount)} KLS</div>
 						<div class="br tx-note">${tx.note}</div>
 						<div class="br tx-id">
 							<a target="_blank" href="https://explorer.karlsencoin.com/txs/${tx.id.split(":")[0]}">${tx.id.split(":")[0]}</a>
@@ -461,7 +461,7 @@ export class KarlsenWalletUI extends BaseElement{
 						row.push(tx.address)
 					break;
 					case 'amount':
-						row.push(escape(`${tx.in?'':'-'}${KAS(tx.amount)}`))
+						row.push(escape(`${tx.in?'':'-'}${KLS(tx.amount)}`))
 					break;
 					case 'direction':
 						row.push(tx.in?'RECEIVE':'SEND')
@@ -519,7 +519,7 @@ export class KarlsenWalletUI extends BaseElement{
 						<div class="tx-date" title="#${skip+i+1} UTXO">
 							${tx.blockDaaScore} (${tx.mass})
 						</div>
-						<div class="tx-amount">${KAS(tx.satoshis)} KLS</div>
+						<div class="tx-amount">${KLS(tx.satoshis)} KLS</div>
 						<div class="br tx-mass"></div>
 						<div class="br tx-id">
 							<a target="_blank" href="https://explorer.karlsencoin.com/txs/${tx.txId}">${tx.id}</a>
@@ -714,8 +714,8 @@ export class KarlsenWalletUI extends BaseElement{
 		input.blur();
 	}
 	
-	formatKAS(value){
-		return KAS(value);
+	formatKLS(value){
+		return KLS(value);
 	}
 	showError(err){
 		console.log("showError:err", err)
@@ -1435,12 +1435,12 @@ export class KarlsenWalletUI extends BaseElement{
 			value:'',
 			max,
 			heading:i18n.t('Request funds'),
-			inputLabel:i18n.t('Amount in KAS')
+			inputLabel:i18n.t('Amount in KLS')
 		}, ({value:amount, dialog})=>{
 			let sompis = formatForMachine(amount||0);
 			if(sompis > this.faucetFundsAvailable){
 				let msg = i18n.t(`You can't request more than [n] KLS.`)
-						.replace("[n]", KAS(this.faucetFundsAvailable||0))
+						.replace("[n]", KLS(this.faucetFundsAvailable||0))
 				return dialog.setError(msg);//'
 			}
 			

@@ -1,5 +1,5 @@
 import {
-	html, css, KarlsenDialog, KAS, txListStyle,
+	html, css, KarlsenDialog, KLS, txListStyle,
 	paginationStyle, buildPagination,
 	renderPagination, T
 } from './karlsen-dialog.js';

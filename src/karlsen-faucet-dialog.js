@@ -1,4 +1,4 @@
-import {html, css, KarlsenDialog, KAS} from './karlsen-dialog.js';
+import {html, css, KarlsenDialog, KLS} from './karlsen-dialog.js';
 
 class KarlsenFaucetDialog extends KarlsenDialog{
 	static get properties(){
@@ -21,7 +21,7 @@ class KarlsenFaucetDialog extends KarlsenDialog{
         return html`
             ${ this.status ? html`<div>${this.status}</div>` : html`
                 <div is="i18n">Available:</div>
-                <div>${KAS(available)} KLS</div>
+                <div>${KLS(available)} KLS</div>
 
                 ${this.period ? html`
                     <div><span is="i18n">Additional funds will be<br/>available in</span> ${FlowFormat.duration(this.period)}</div>

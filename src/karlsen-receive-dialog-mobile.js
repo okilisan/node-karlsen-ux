@@ -1,5 +1,5 @@
 import {
-	html, css, KarlsenDialog, T, KAS,
+	html, css, KarlsenDialog, T, KLS,
 	formatForMachine, formatForHuman
 } from './karlsen-dialog.js';
 

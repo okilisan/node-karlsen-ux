@@ -4,7 +4,7 @@ let isMobile = window.mobileMode?true:_isSmallScreen;
 window.isMobile = isMobile;
 
 import {helper, Storage, CONFIRMATION_COUNT, COINBASE_CFM_COUNT} from '@karlsen/wallet-worker';
-export const {Deferred, KAS, Decimal} = helper;
+export const {Deferred, KLS, Decimal} = helper;
 export {CONFIRMATION_COUNT, COINBASE_CFM_COUNT};
 const storage = new Storage({logLevel:'debug'});
 let {baseUrl, debug, MAX_UTXOS_THRESHOLD=80, dontInitiatedComponent=false} = window.KarlsenConfig || {};
@@ -42,7 +42,7 @@ export const GetTS = (d=null)=>{
 }
 
 /**
- * Converts from sompis to KAS
+ * Converts from sompis to KLS
  * @param val Value to convert, as string or number
  * @returns Converted value as a string
  */
@@ -51,7 +51,7 @@ export const formatForHuman = (val)=>{
 }
 
 /**
- * Converts from KAS to sompis
+ * Converts from KLS to sompis
  * @param val Value to convert, as string or number
  * @returns Converted value as a string
  */

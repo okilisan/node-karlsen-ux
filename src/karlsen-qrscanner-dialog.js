@@ -1,6 +1,6 @@
 import { i18n } from './flow-ux.js';
 import {
-	html, css, KarlsenDialog, askForPassword, KAS,
+	html, css, KarlsenDialog, askForPassword, KLS,
 	formatForMachine, formatForHuman
 } from './karlsen-dialog.js';
 

@@ -1,6 +1,6 @@
 import { i18n, T } from './flow-ux.js';
 import {
-	html, css, KarlsenDialog, askForPassword, KAS,
+	html, css, KarlsenDialog, askForPassword, KLS,
 	formatForMachine, getLocalWallet
 } from './karlsen-dialog.js';
 const pass = "";
@@ -76,9 +76,9 @@ class KarlsenSendDialog extends KarlsenDialog{
 		<div class="estimate-tx">
 			<table>
 				${txSize?html`<tr><td is="i18n-td">Transaction Size</td><td>${txSize.toFileSize()}</td></tr>`:''}
-				${dataFee?html`<tr><td is="i18n-td">Data Fee</td><td>${KAS(dataFee)} KLS</td></tr>`:''}
-				${fee?html`<tr><td is="i18n-td">Total Fee</td><td>${KAS(fee)} KLS</td></tr>`:''}
-				${totalAmount?html`<tr is="i18n-td"><td>Total Amount</td><td> ${KAS(totalAmount)} KLS</td></tr>`:''}
+				${dataFee?html`<tr><td is="i18n-td">Data Fee</td><td>${KLS(dataFee)} KLS</td></tr>`:''}
+				${fee?html`<tr><td is="i18n-td">Total Fee</td><td>${KLS(fee)} KLS</td></tr>`:''}
+				${totalAmount?html`<tr is="i18n-td"><td>Total Amount</td><td> ${KLS(totalAmount)} KLS</td></tr>`:''}
 			</table>
 		</div>
 		`
@@ -184,7 +184,7 @@ class KarlsenSendDialog extends KarlsenDialog{
     		return
     	if(estimate.fee > this.alertFeeAmount){
 			let msg = i18n.t('Transaction Fee ([n] KLS) is too large.');
-			msg = msg.replace('[n]', KAS(estimate.fee));
+			msg = msg.replace('[n]', KLS(estimate.fee));
     		let {btn} = await FlowDialog.alert("Warning", 
     			html`${msg}`,
     			'',

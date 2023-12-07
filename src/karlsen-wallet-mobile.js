@@ -1,6 +1,6 @@
 import {
 	html, css, FlowFormat, KarlsenWalletUI, dpc,
-	baseUrl, KAS, renderPagination, buildPagination, paginationStyle,
+	baseUrl, KLS, renderPagination, buildPagination, paginationStyle,
 	swipeableStyle, FlowSwipeable, isMobile, dontInitiatedComponent,
 	getTheme, setTheme, flow, T, i18nFormat, i18nHTMLFormat,
 	FlowI18nDialog, askForPassword, i18n, getLocalWallet, Wallet
@@ -408,7 +408,7 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 						<div class="faucet-ux">
 							<div class="margin-bottom"  is="i18n-div">KARLSEN FAUCET</div>
 							<div>${i18nFormat('Your IP is [n]', this.ip||"")}</div>
-							<div class="margin">${i18nHTMLFormat('You have <b>[n] KLS</b> available.', KAS(this.faucetFundsAvailable||0) )}</div>
+							<div class="margin">${i18nHTMLFormat('You have <b>[n] KLS</b> available.', KLS(this.faucetFundsAvailable||0) )}</div>
 
 							${this.faucetPeriod ? html`
 								<div class="margin-bottom">${i18nHTMLFormat('Additional funds will be<br/>available in [n]', FlowFormat.duration(this.faucetPeriod))}</div>
@@ -450,7 +450,7 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 						</div>
 						<table>
 							<tr><td is="i18n-td">COUNT</td><td>${inUseUTXOs.count}</td></tr>
-							<tr><td is="i18n-td">AMOUNT</td><td>${KAS(inUseUTXOs.satoshis||0)} KLS</td></tr>
+							<tr><td is="i18n-td">AMOUNT</td><td>${KLS(inUseUTXOs.satoshis||0)} KLS</td></tr>
 						</table>
 						<flow-btn class="center-btn primary v-margin"
 							@click="${this.showUTXOs}" i18n>Show UTXOs</flow-btn>
@@ -611,15 +611,15 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 						<span class="value" is="i18n-span">SCANNING...</span>
 					</div>
 					<div class="balance pending">
-						<span class="label-pending">${T('PLEASE WAIT')} <span class="dots">${this.dots}</span> ${total ? this.formatKAS(total)+' KLS':''}</span>
+						<span class="label-pending">${T('PLEASE WAIT')} <span class="dots">${this.dots}</span> ${total ? this.formatKLS(total)+' KLS':''}</span>
 					</div>
 				` : html`
 					<div class="balance">
-						<span class="value">${this.formatKAS(available)} KLS</span>
+						<span class="value">${this.formatKLS(available)} KLS</span>
 					</div>
 					<div class="balance pending">
 						<span class="label-pending" is="i18n-span">Pending:</span>
-						<span class="value-pending">${this.formatKAS(pending)} KLS</span>
+						<span class="value-pending">${this.formatKLS(pending)} KLS</span>
 					</div>
 				`}
             </div>
