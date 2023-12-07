@@ -283,10 +283,8 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 		let PWAVersion = window.PWA?.version||'';
 
 		let donationAddresses = [
-			["Kaspa Devfund donations:", "kaspa:precqv0krj3r6uyyfa36ga7s0u9jct0v4wg8ctsfde2gkrsgwgw8jgxfzfc98"],
-			["Kaspa Mining address:", "kaspa:pzhh76qc82wzduvsrd9xh4zde9qhp0xc8rl7qu2mvl2e42uvdqt75zrcgpm00"],
 			["Karlsen Devfund donations:", "karlsen:qzrq7v5jhsc5znvtfdg6vxg7dz5x8dqe4wrh90jkdnwehp6vr8uj7csdss2l7"],
-			//["KDX/WebWallet donations:", "kaspa:qrncjga8hej9q59q85ge5js6m4y97el6ahp3m87hyzqdtaq6pf0v7xek7x900"],
+			["Karlsen WebWallet donations:", "karlsen:qqe3p64wpjf5y27kxppxrgks298ge6lhu6ws7ndx4tswzj7c84qkjlrspcuxw"],
 		]
 
 		return html`
@@ -370,7 +368,7 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 								<span is="i18n-span">DONATIONS</span>
 							</div>
 							<p is="i18n-p">
-								if you wish to further the development of the kaspa and karlsen ecosystem, we accept donations at the following addresses:
+								if you wish to further the development of the karlsen ecosystem, we accept donations at the following addresses:
 							</p>
 							${
 								donationAddresses.map((t) => {
