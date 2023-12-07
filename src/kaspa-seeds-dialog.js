@@ -1,9 +1,9 @@
 import {
-	html, css, KaspaDialog, chunks, getRandomInt, shuffle,
+	html, css, KarlsenDialog, chunks, getRandomInt, shuffle,
 	T, i18n
-} from './kaspa-dialog.js';
+} from './karlsen-dialog.js';
 
-class KaspaSeedsDialog extends KaspaDialog{
+class KarlsenSeedsDialog extends KarlsenDialog{
 
 	static get properties() {
 		return {
@@ -14,9 +14,9 @@ class KaspaSeedsDialog extends KaspaDialog{
 	}
 
 	static get styles(){
-		return [KaspaDialog.styles, css`
+		return [KarlsenDialog.styles, css`
 			.heading{text-align:center}
-			.container{max-height:var(--kaspa-dialog-container-max-height, 660px)}
+			.container{max-height:var(--karlsen-dialog-container-max-height, 660px)}
 			.buttons{justify-content:flex-end}
 			.dull-text{opacity:0.5}
 			.text-center{text-align:center;}
@@ -244,4 +244,4 @@ class KaspaSeedsDialog extends KaspaDialog{
 
 }
 
-KaspaSeedsDialog.define("kaspa-seeds-dialog");
+KarlsenSeedsDialog.define("karlsen-seeds-dialog");

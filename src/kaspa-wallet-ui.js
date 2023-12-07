@@ -12,13 +12,13 @@ import {
 	askForPassword
 } from './wallet.js';
 export * from './wallet.js';
-import {initKaspaFramework, Wallet, workerLog} from '@kaspa/wallet-worker';
+import {initKarlsenFramework, Wallet, workerLog} from '@karlsen/wallet-worker';
 export {Wallet};
 Wallet.setWorkerLogLevel(localStorage.walletWorkerLogLevel || 'none')
 
 export {html, css, FlowFormat, dpc, baseUrl, debug};
 
-export class KaspaWalletUI extends BaseElement{
+export class KarlsenWalletUI extends BaseElement{
 
 	static get properties() {
 		return {
@@ -182,7 +182,7 @@ export class KaspaWalletUI extends BaseElement{
 		if(!this.rpcBuilder)
 			return false;
 		
-		//const { network, port } = this.local_kaspad_settings;
+		//const { network, port } = this.local_karlsend_settings;
 		//const port = Wallet.networkTypes[network].port;
 		const {rpc, network} = this.rpcBuilder();//new RPC({ clientConfig:{ host : `127.0.0.1:${port}` } });
 		this.network = network;
@@ -1122,26 +1122,26 @@ export class KaspaWalletUI extends BaseElement{
 	connectedCallback(){
 		super.connectedCallback();
 		let mobileSuffix = isMobile?'-mobile':'';
-		let openDialog = document.createElement('kaspa-open-dialog');
+		let openDialog = document.createElement('karlsen-open-dialog');
 		openDialog.hideLogo = !!this.hideOpenWalletLogo;
 		this.parentNode.insertBefore(openDialog, this.nextSibling)
-		this.sendDialog = document.createElement("kaspa-send-dialog"+mobileSuffix);
+		this.sendDialog = document.createElement("karlsen-send-dialog"+mobileSuffix);
 		this.parentNode.appendChild(this.sendDialog);
-		this.receiveDialog = document.createElement("kaspa-receive-dialog"+mobileSuffix);
+		this.receiveDialog = document.createElement("karlsen-receive-dialog"+mobileSuffix);
 		this.parentNode.appendChild(this.receiveDialog);
-		this.seedsDialog = document.createElement("kaspa-seeds-dialog");
+		this.seedsDialog = document.createElement("karlsen-seeds-dialog");
 		this.parentNode.appendChild(this.seedsDialog);
-		let t9Dialog = document.createElement("kaspa-t9-dialog");
+		let t9Dialog = document.createElement("karlsen-t9-dialog");
 		this.parentNode.appendChild(t9Dialog);
-		let qrscannerDialog = document.createElement("kaspa-qrscanner-dialog");
+		let qrscannerDialog = document.createElement("karlsen-qrscanner-dialog");
 		qrscannerDialog.debug = this.debugscanner
 		this.parentNode.appendChild(qrscannerDialog);
-		let uploadFileDialog = document.createElement("kaspa-upload-file-dialog");
+		let uploadFileDialog = document.createElement("karlsen-upload-file-dialog");
 		this.parentNode.appendChild(uploadFileDialog);
 
-		const {workerCorePath} = window.KaspaConfig||{}
-		initKaspaFramework({
-			workerPath: workerCorePath||"/kaspa-wallet-worker/worker.js?ident="+(window.KaspaConfig?.ident||"")
+		const {workerCorePath} = window.KarlsenConfig||{}
+		initKarlsenFramework({
+			workerPath: workerCorePath||"/karlsen-wallet-worker/worker.js?ident="+(window.KarlsenConfig?.ident||"")
 		}).then(()=>{
 			let encryptedMnemonic = getLocalWallet()?.mnemonic;
 			this.initWallet(encryptedMnemonic)
@@ -1179,7 +1179,7 @@ export class KaspaWalletUI extends BaseElement{
 		console.log("$$$$$$$ INIT NETWORK SETTINGS", { network, rpc });
 
 		if(!rpc)
-			return FlowDialog.alert(i18n.t("Error"), i18n.t("Kaspa Daemon config is missing."));
+			return FlowDialog.alert(i18n.t("Error"), i18n.t("Karlsen Daemon config is missing."));
 
 		this.initDaemonRPC();
 		this.initHelpers();
@@ -1267,7 +1267,7 @@ export class KaspaWalletUI extends BaseElement{
 	}
 	showTxDialog(){
 		if(!this.txDialog){
-			this.txDialog = document.createElement("kaspa-tx-dialog");
+			this.txDialog = document.createElement("karlsen-tx-dialog");
 			this.parentNode.appendChild(this.txDialog);
 		}
 		this.txDialog.open({wallet:this}, (args)=>{})
@@ -1285,7 +1285,7 @@ export class KaspaWalletUI extends BaseElement{
 
 	async isValidAddress(address){
 		let [prefix] = address.split(":");
-		if(window.mobileMode && prefix=="kaspatest")
+		if(window.mobileMode && prefix=="karlsentest")
 			return true;
 
 		let minningAddress = await this.getMiningAddress()
@@ -1405,7 +1405,7 @@ export class KaspaWalletUI extends BaseElement{
 		})
 	}
 
-	async getKaspaFromFaucet(amount) {
+	async getKarlsenFromFaucet(amount) {
 		this.makeFaucetRequest('faucet-request', {
 			address : this.receiveAddress,
 			amount: formatForMachine(amount)
@@ -1446,7 +1446,7 @@ export class KaspaWalletUI extends BaseElement{
 			
 			dialog.hide();
 
-			this.getKaspaFromFaucet(amount)
+			this.getKarlsenFromFaucet(amount)
 
 		})
 	}

@@ -1,6 +1,6 @@
-import {html, css, KaspaDialog, KAS} from './kaspa-dialog.js';
+import {html, css, KarlsenDialog, KAS} from './karlsen-dialog.js';
 
-class KaspaFaucetDialog extends KaspaDialog{
+class KarlsenFaucetDialog extends KarlsenDialog{
 	static get properties(){
 		return {
 			address:{type:String}

@@ -15,7 +15,7 @@ if(isMobile){
 	});
 }
 
-export class KaspaDialog extends BaseElement{
+export class KarlsenDialog extends BaseElement{
 
 	static get properties() {
 		return {
@@ -28,12 +28,12 @@ export class KaspaDialog extends BaseElement{
 		return [ScrollbarStyle, SpinnerStyle, css`
 			:host{
 				z-index:-10;opacity:0;
-				position:var(--kaspa-dialog-position, absolute);
+				position:var(--karlsen-dialog-position, absolute);
 				top:0px;
 				left:0px;
 				width:100%;
 				height:100%;
-				background-color:var(--kaspa-dialog-bg-color);
+				background-color:var(--karlsen-dialog-bg-color);
 				box-sizing:border-box;
 				font-family: "Open Sans", sans-serif;
 				display:none;
@@ -47,15 +47,15 @@ export class KaspaDialog extends BaseElement{
 			.container{
 				box-sizing:border-box;
 				width:100%;
-				height:var(--kaspa-dialog-container-height, calc(100% - 10px));
+				height:var(--karlsen-dialog-container-height, calc(100% - 10px));
 				background-color:var(--flow-background-color, #F00);
 				z-index:1;
-				border:var(--kaspa-dialog-container-border, 2px solid var(--flow-primary-color));
-				border-radius:var(--kaspa-dialog-container-border-radius, 3px);
-				max-width:var(--kaspa-dialog-container-max-width, 700px);
-				max-height:var(--kaspa-dialog-container-max-height, 300px);
-				margin:var(--kaspa-dialog-container-margin, 5px auto);
-				padding:var(--kaspa-dialog-container-padding, 0px);
+				border:var(--karlsen-dialog-container-border, 2px solid var(--flow-primary-color));
+				border-radius:var(--karlsen-dialog-container-border-radius, 3px);
+				max-width:var(--karlsen-dialog-container-max-width, 700px);
+				max-height:var(--karlsen-dialog-container-max-height, 300px);
+				margin:var(--karlsen-dialog-container-margin, 5px auto);
+				padding:var(--karlsen-dialog-container-padding, 0px);
 				position:relative;
 				display:flex;flex-direction:column;
 			}
@@ -69,7 +69,7 @@ export class KaspaDialog extends BaseElement{
 			    line-height:0px;display:none;
 			}
 			:host([hideable]) .close-btn{
-				display:var(--kaspa-dialog-container-close-btn-display, inline-block)
+				display:var(--karlsen-dialog-container-close-btn-display, inline-block)
 			}
 			.heading{
 				margin:0px;padding:5px 10px;font-size:1rem;min-height:30px;
@@ -94,7 +94,7 @@ export class KaspaDialog extends BaseElement{
 			}
 			
 			[hidden]{display:none}
-			.buttons{margin:var(--kaspa-dialog-buttons-margin, 10px auto);display:flex;width:var(--kaspa-dialog-buttons-width,90%);}
+			.buttons{margin:var(--karlsen-dialog-buttons-margin, 10px auto);display:flex;width:var(--karlsen-dialog-buttons-width,90%);}
 			.buttons flow-btn{margin:5px;}
 			:host(.no-buttons) .body-inner>.buttons{display:none}
 			.buttons flow-btn:first-child{margin-left:0px;}
@@ -171,7 +171,7 @@ export class KaspaDialog extends BaseElement{
 			return
 		let name = this.tagName || this.name || this.constructor.name;
 		name = name.replace(/\-/g, "");
-		let key = name.toLowerCase().replace(/(kaspa|dialog|mobile)/g, '')
+		let key = name.toLowerCase().replace(/(karlsen|dialog|mobile)/g, '')
 		let state = {type:name, uid, key};
 		history.pushState(state, name, "/"+key+"/"+uid);
 		historyStack.push(state)

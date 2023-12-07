@@ -1,18 +1,18 @@
 import {
-	html, css, KaspaDialog, askForPassword, KAS,
+	html, css, KarlsenDialog, askForPassword, KAS,
 	formatForMachine, T, i18n, formatForHuman, getLocalWallet
-} from './kaspa-dialog.js';
-import {Wallet} from '@kaspa/wallet-worker';
+} from './karlsen-dialog.js';
+import {Wallet} from '@karlsen/wallet-worker';
 const pass = "";
 
-class KaspaSendDialogMobile extends KaspaDialog{
+class KarlsenSendDialogMobile extends KarlsenDialog{
 	static get properties(){
 		return {
 			address:{type:String}
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, 
+		return [KarlsenDialog.styles, 
 		css`
 			.container{
 				border-radius:0px;width:100%;height:100%;border:0px;
@@ -316,4 +316,4 @@ class KaspaSendDialogMobile extends KaspaDialog{
     }
 }
 
-KaspaSendDialogMobile.define("kaspa-send-dialog-mobile");
+KarlsenSendDialogMobile.define("karlsen-send-dialog-mobile");

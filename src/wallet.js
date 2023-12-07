@@ -3,21 +3,21 @@ window.mobileMode = window.localStorage?.getItem("mobileMode")==1||false;
 let isMobile = window.mobileMode?true:_isSmallScreen;
 window.isMobile = isMobile;
 
-import {helper, Storage, CONFIRMATION_COUNT, COINBASE_CFM_COUNT} from '@kaspa/wallet-worker';
+import {helper, Storage, CONFIRMATION_COUNT, COINBASE_CFM_COUNT} from '@karlsen/wallet-worker';
 export const {Deferred, KAS, Decimal} = helper;
 export {CONFIRMATION_COUNT, COINBASE_CFM_COUNT};
 const storage = new Storage({logLevel:'debug'});
-let {baseUrl, debug, MAX_UTXOS_THRESHOLD=80, dontInitiatedComponent=false} = window.KaspaConfig || {};
+let {baseUrl, debug, MAX_UTXOS_THRESHOLD=80, dontInitiatedComponent=false} = window.KarlsenConfig || {};
 if(!baseUrl){
 	baseUrl = (new URL("../", import.meta.url)).href;
-	debug && console.log("KaspaUX: baseUrl", baseUrl)
+	debug && console.log("KarlsenUX: baseUrl", baseUrl)
 }
 export {baseUrl, debug, isMobile, dontInitiatedComponent}
 
 export const MAX_UTXOS_THRESHOLD_COMPOUND = MAX_UTXOS_THRESHOLD;
 
 /*
-const {Wallet, initKaspaFramework, Storage} = require("kaspa-wallet-worker");
+const {Wallet, initKarlsenFramework, Storage} = require("karlsen-wallet-worker");
 let {Mnemonic} = Wallet;
 console.log("Wallet", Wallet)
 window.testSeed = new Mnemonic(Mnemonic.Words.ENGLISH).toString();
@@ -25,7 +25,7 @@ console.log("test Mnemonic: ", window.testSeed)
 const crypto = require('crypto');
 const storage = new Storage({logLevel:'debug'});
 
-export const {RPC} = require("kaspa-grpc-node");
+export const {RPC} = require("karlsen-grpc-node");
 */
 
 import {html, css} from './flow-ux.js';

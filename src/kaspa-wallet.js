@@ -1,13 +1,13 @@
 export * from './flow-ux.js';
 
-import {KaspaWalletDesktop} from './kaspa-wallet-desktop.js';
-import {KaspaWalletMobile, isMobile, dontInitiatedComponent} from './kaspa-wallet-mobile.js';
+import {KarlsenWalletDesktop} from './karlsen-wallet-desktop.js';
+import {KarlsenWalletMobile, isMobile, dontInitiatedComponent} from './karlsen-wallet-mobile.js';
 
 if(isMobile)
 	document.body.classList.add('is-mobile');
 export {isMobile}
 
-export const KaspaWallet = isMobile ? KaspaWalletMobile : KaspaWalletDesktop;
+export const KarlsenWallet = isMobile ? KarlsenWalletMobile : KarlsenWalletDesktop;
 
 if(!dontInitiatedComponent)
-	KaspaWallet.define("kaspa-wallet");
+	KarlsenWallet.define("karlsen-wallet");

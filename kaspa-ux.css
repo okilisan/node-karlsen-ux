@@ -86,8 +86,8 @@ body{
 	--tx-bg-color-2:#FEFEFE;
 	--tx-bg-color-3:#DDD;
 	--tx-border-color:#DDD;
-	--kaspa-dialog-bg-color:rgba(255, 255, 255, 0.5);
-	--kaspa-lock-screen-bg-color:var(--flow-background-color);
+	--karlsen-dialog-bg-color:rgba(255, 255, 255, 0.5);
+	--karlsen-lock-screen-bg-color:var(--flow-background-color);
 	/*	--flow-btn-text-transform:uppercase;*/
 	--flow-btn-display:inline-block;
 }
@@ -120,42 +120,42 @@ body.flow-theme-dark{
 	--tx-bg-color-1:var(--flow-background-color);
 	--tx-bg-color-2:#282828;
 	--tx-bg-color-3:#333232;
-	--kaspa-dialog-bg-color:rgba(40,40,40,0.71);
-	--kaspa-wallet-tab-border-bottom-color:#333232;
+	--karlsen-dialog-bg-color:rgba(40,40,40,0.71);
+	--karlsen-wallet-tab-border-bottom-color:#333232;
 	--tx-border-color:#282828;
 }
 flow-add-to-home{
 	position:fixed;bottom:5px;left:5px;right:5px;z-index:1000;
 }
 
-kaspa-open-dialog[mode="open"][hidelogo]{
-	--kaspa-dialog-container-max-height:350px;
+karlsen-open-dialog[mode="open"][hidelogo]{
+	--karlsen-dialog-container-max-height:350px;
 }
 
 body.is-mobile{
-	--kaspa-dialog-position:fixed;
-	--kaspa-dialog-container-height:100%;
-	--kaspa-dialog-container-max-height:100%;
-	--kaspa-dialog-container-max-width:100%;
-	--kaspa-dialog-container-padding:0px;
-	--kaspa-dialog-container-margin:0px;
-	--kaspa-dialog-container-border:0px;
-	--kaspa-dialog-container-border-radius:0px;
-	--kaspa-dialog-buttons-margin:0px auto;
-	--kaspa-pagination-box-padding:2px;
-	--kaspa-dialog-container-close-btn-display:none;
+	--karlsen-dialog-position:fixed;
+	--karlsen-dialog-container-height:100%;
+	--karlsen-dialog-container-max-height:100%;
+	--karlsen-dialog-container-max-width:100%;
+	--karlsen-dialog-container-padding:0px;
+	--karlsen-dialog-container-margin:0px;
+	--karlsen-dialog-container-border:0px;
+	--karlsen-dialog-container-border-radius:0px;
+	--karlsen-dialog-buttons-margin:0px auto;
+	--karlsen-pagination-box-padding:2px;
+	--karlsen-dialog-container-close-btn-display:none;
 }
 
 @media(max-width:768px){
 	body{
 		--flow-input-min-width:100px;
-		--kaspa-wallet-address-input-min-width:100px;
+		--karlsen-wallet-address-input-min-width:100px;
 	}
 }
 /*
 @media(max-height:500px){
 	body{
-		--kaspa-dialog-container-max-height:100%;
+		--karlsen-dialog-container-max-height:100%;
 	}
 }
 */
@@ -300,7 +300,7 @@ body.disable:after{z-index:100000;opacity:1;}
 .task-info .task .version i{
 	font-size:0.75rem;font-style:normal;font-family:Consolas;
 }
-.task-info .kaspad{font-family:Consolas;font-size:0.75rem;}
+.task-info .karlsend{font-family:Consolas;font-size:0.75rem;}
 .task-info .task .sub.suffix{font-size:0.83rem;}
 
 body:not(.advanced-ui) .advanced-tool{display:none}
@@ -312,7 +312,7 @@ project license {  display: inline-block; }
 project copyright {  display: inline-block; font-size: 12.5px; } 
 project > * { padding: 2px; }
 
-#kaspa-resources ul li {
+#karlsen-resources ul li {
 	font-size: 18px;
 	padding: 6px;
 	--flow-link-font-size:18px;

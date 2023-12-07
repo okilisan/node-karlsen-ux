@@ -1,20 +1,20 @@
 import { i18n } from './flow-ux.js';
 import {
-	html, css, KaspaDialog, askForPassword, KAS,
+	html, css, KarlsenDialog, askForPassword, KAS,
 	formatForMachine, formatForHuman
-} from './kaspa-dialog.js';
+} from './karlsen-dialog.js';
 
-class KaspaQRScannerDialog extends KaspaDialog{
+class KarlsenQRScannerDialog extends KarlsenDialog{
 	static get properties(){
 		return {
 			value:{type:String}
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, css`
+		return [KarlsenDialog.styles, css`
 			.container{
 				width:100%;height:100%;padding:0px;
-				max-height:var(--kaspa-dialog-container-max-height, 620px);
+				max-height:var(--karlsen-dialog-container-max-height, 620px);
 			}
 			flow-t9{width:215px;margin:auto;display:block;}
 			.body-box{align-items:flex-start;}
@@ -106,4 +106,4 @@ class KaspaQRScannerDialog extends KaspaDialog{
     }
 }
 
-KaspaQRScannerDialog.define("kaspa-qrscanner-dialog");
+KarlsenQRScannerDialog.define("karlsen-qrscanner-dialog");

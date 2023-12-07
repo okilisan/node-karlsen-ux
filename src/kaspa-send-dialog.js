@@ -1,22 +1,22 @@
 import { i18n, T } from './flow-ux.js';
 import {
-	html, css, KaspaDialog, askForPassword, KAS,
+	html, css, KarlsenDialog, askForPassword, KAS,
 	formatForMachine, getLocalWallet
-} from './kaspa-dialog.js';
+} from './karlsen-dialog.js';
 const pass = "";
-import {Wallet} from '@kaspa/wallet-worker';
+import {Wallet} from '@karlsen/wallet-worker';
 
-class KaspaSendDialog extends KaspaDialog{
+class KarlsenSendDialog extends KarlsenDialog{
 	static get properties(){
 		return {
 			address:{type:String}
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, 
+		return [KarlsenDialog.styles, 
 		css`
 			.container{
-				max-height:var(--kaspa-dialog-container-max-height, 670px);
+				max-height:var(--karlsen-dialog-container-max-height, 670px);
 			}
 			.buttons{justify-content:flex-end;align-items:center}
 			.spinner{margin-right:20px}
@@ -221,4 +221,4 @@ class KaspaSendDialog extends KaspaDialog{
     }
 }
 
-KaspaSendDialog.define("kaspa-send-dialog");
+KarlsenSendDialog.define("karlsen-send-dialog");

@@ -1,12 +1,12 @@
 import {
-	html, css, FlowFormat, KaspaWalletUI, dpc,
+	html, css, FlowFormat, KarlsenWalletUI, dpc,
 	baseUrl, KAS, renderPagination, buildPagination, paginationStyle,
 	swipeableStyle, FlowSwipeable, isMobile, dontInitiatedComponent,
 	getTheme, setTheme, flow, T, i18nFormat, i18nHTMLFormat,
 	FlowI18nDialog, askForPassword, i18n, getLocalWallet, Wallet
-} from './kaspa-wallet-ui.js';
+} from './karlsen-wallet-ui.js';
 export {isMobile, dontInitiatedComponent};
-export class KaspaWalletMobile extends KaspaWalletUI{
+export class KarlsenWalletMobile extends KarlsenWalletUI{
 
 	static get properties() {
 		return {
@@ -18,7 +18,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 	}
 
 	static get styles(){
-		return [KaspaWalletUI.styles, paginationStyle, swipeableStyle, css`
+		return [KarlsenWalletUI.styles, paginationStyle, swipeableStyle, css`
 			:host{
 				padding:0px;display:flex;flex-direction:column;
 				font-size:1.1rem;
@@ -28,8 +28,8 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 			}
 			.header{
 				display:flex;align-items:center;min-height:28px;
-				padding:var(--kaspa-wallet-header-padding, 5px 10px);
-				margin:var(--kaspa-wallet-header-margin, 0px);
+				padding:var(--karlsen-wallet-header-padding, 5px 10px);
+				margin:var(--karlsen-wallet-header-margin, 0px);
 			}
 
 			.pagination a{
@@ -39,20 +39,20 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 				padding:var(--flow-page-btn-padding, var(--flow-btn-padding, 5px))
 			}
 			.pagination-box{
-				padding:var(--kaspa-pagination-box-padding, 10px 5px;);
+				padding:var(--karlsen-pagination-box-padding, 10px 5px;);
 			}
 
 			.logo{
 				width:30px;height:30px;/*background-color:#DDD*/
-				display:var(--kaspa-wallet-header-logo-diaplay, initial);
+				display:var(--karlsen-wallet-header-logo-diaplay, initial);
 			}
 			.logo-img{max-width:100%;max-height:100%;}
 			fa-icon.spinner{position:relative !important;margin: 0px 10px;}
 			.error-message{color:#F00;margin:10px 0px;}
 			.tabs-container{
 				overflow:hidden;overflow-x:auto;
-				border-top:2px solid var(--kaspa-wallet-tab-border-top-color, var(--flow-primary-color));
-				border-bottom:1px solid var(--kaspa-wallet-tab-border-bottom-color, #DDD);
+				border-top:2px solid var(--karlsen-wallet-tab-border-top-color, var(--flow-primary-color));
+				border-bottom:1px solid var(--karlsen-wallet-tab-border-bottom-color, #DDD);
 			}
 			.tabs{
 				display:flex;align-items:stretch;padding:0px;
@@ -66,7 +66,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 				text-decoration:none;
 			}
 			.tab.selected{
-				border-bottom-color:var(--kaspa-wallet-tab-active-border-color, var(--flow-primary-color));
+				border-bottom-color:var(--karlsen-wallet-tab-active-border-color, var(--flow-primary-color));
 			}
 			.tab:not(.selected){cursor:pointer}
 			.tab-contents{position:relative;flex:1;overflow:hidden}
@@ -100,7 +100,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 				border:0px;-webkit-appearance:none;outline:none;margin:5px 5px 0px 0px;
 				flex:1;overflow: hidden;text-overflow:ellipsis;font-size:16px;
 				max-width:500px;width:100px;
-				min-width:var(--kaspa-wallet-address-input-min-width, 460px);
+				min-width:var(--karlsen-wallet-address-input-min-width, 460px);
 				background-color:transparent;color:var(--flow-primary-color);
 				font-family:"Exo 2";word-wrap:break-word;height:110px;
 				resize:none;
@@ -125,17 +125,17 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 			.send-scan-buttons a{display:block}
 			.send-scan-buttons a fa-icon{
 				--fa-icon-size:26px;border-radius:50%;padding:22px;
-				background-color:var(--kaspa-wallet-scan-button-bg, #3d4e58);
-				--fa-icon-color:var(--kaspa-wallet-scan-button-color, #FFF);
+				background-color:var(--karlsen-wallet-scan-button-bg, #3d4e58);
+				--fa-icon-color:var(--karlsen-wallet-scan-button-color, #FFF);
 				box-shadow:var(--flow-box-shadow);
 			}
 			.send-scan-buttons .send-btn fa-icon{
-				background-color:var(--kaspa-wallet-send-button-bg, #fb7470);
-				--fa-icon-color:var(--kaspa-wallet-send-button-color, #FFF);
+				background-color:var(--karlsen-wallet-send-button-bg, #fb7470);
+				--fa-icon-color:var(--karlsen-wallet-send-button-color, #FFF);
 			}
 			.send-scan-buttons .receive-btn fa-icon{
-				background-color:var(--kaspa-wallet-receive-button-bg, #60b686);
-				--fa-icon-color:var(--kaspa-wallet-receive-button-color, #FFF);
+				background-color:var(--karlsen-wallet-receive-button-bg, #60b686);
+				--fa-icon-color:var(--karlsen-wallet-receive-button-color, #FFF);
 			}
 			.send-scan-buttons a span{
 				display:block;text-align:center;font-size:0.75rem;margin:8px 0px 5px;
@@ -245,7 +245,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 				justify-content: center;
 				position:absolute;
 				z-index:1000000;
-				background-color:var(--kaspa-lock-screen-bg-color);
+				background-color:var(--karlsen-lock-screen-bg-color);
 				top:0px;bottom:0px;
 				left:0px;right:0px;
 			}
@@ -391,11 +391,11 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 								<fa-icon icon="caret-right"></fa-icon>
 								<span is="i18n-span">DEVELOPER INFO</span>
 							</div>
-							<div class="badge"><span is="i18n-span">Kaspa Core 4 KLS:</span> ${window.PWA_MODULES['@kaspa/core-lib']}</div>
-							<div class="badge"><span is="i18n-span">Kaspa Wallet Framework 4 KLS:</span> ${window.PWA_MODULES['@kaspa/wallet']}</div>
-							<div class="badge"><span is="i18n-span">Kaspa gRPC:</span> ${window.PWA_MODULES['@kaspa/grpc']}</div>
-							<div class="badge"><span is="i18n-span">Kaspa gRPC Relay:</span> ${window.PWA_MODULES['@kaspa/grpc-web']}</div>
-							<div class="badge"><span is="i18n-span">Kaspa UX 4 KLS:</span> ${window.PWA_MODULES['@kaspa/ux']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen Core 4 KLS:</span> ${window.PWA_MODULES['@karlsen/core-lib']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen Wallet Framework 4 KLS:</span> ${window.PWA_MODULES['@karlsen/wallet']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen gRPC:</span> ${window.PWA_MODULES['@karlsen/grpc']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen gRPC Relay:</span> ${window.PWA_MODULES['@karlsen/grpc-web']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen UX 4 KLS:</span> ${window.PWA_MODULES['@karlsen/ux']}</div>
 							<div class="badge"><span is="i18n-span">Flow UX 4 KLS:</span> ${window.PWA_MODULES['@aspectron/flow-ux']}</div>
 						</flow-expandable>
 
@@ -513,7 +513,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 	renderLockScreen(){
 		return html`
 			<div class="lock-screen">
-				<div><img class="big-logo" src="/resources/images/kaspa.png"></div>
+				<div><img class="big-logo" src="/resources/images/karlsen.png"></div>
 				<fa-icon icon="lock"></fa-icon>
 				<flow-btn primary i18n @click="${this.unlockWallet}">UNLOCK WALLET</flow-btn>
 			</div>
@@ -694,7 +694,7 @@ export class KaspaWalletMobile extends KaspaWalletUI{
 		})
 	}
 	showReceiveDialog(){
-		let address = this.receiveAddress||'kaspatest:abc'
+		let address = this.receiveAddress||'karlsentest:abc'
 		this.receiveDialog.open({wallet:this, address}, (args)=>{
 			//
 		})

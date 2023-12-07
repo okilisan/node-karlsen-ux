@@ -1,8 +1,8 @@
-import {html, css, KaspaDialog, i18n, T} from './kaspa-dialog.js';
+import {html, css, KarlsenDialog, i18n, T} from './karlsen-dialog.js';
 import {askForPassword} from "./wallet.js";
 const pass = "";
 
-class KaspaOpenDialog extends KaspaDialog{
+class KarlsenOpenDialog extends KarlsenDialog{
 
 	static get properties() {
 		return {
@@ -14,12 +14,12 @@ class KaspaOpenDialog extends KaspaDialog{
 	}
 
 	static get styles(){
-		return [KaspaDialog.styles, css`
-			.container{max-height:var(--kaspa-dialog-container-max-height, 600px)}
-			:host([mode="create"]) .container{max-height:var(--kaspa-dialog-container-max-height, 500px)}
-			:host([mode="init"]) .container{max-height:var(--kaspa-dialog-container-max-height, 200px)}
-			:host([mode="recover"]) .container{max-height:var(--kaspa-dialog-container-max-height, 450px)}
-			.buttons{justify-content:center;--kaspa-dialog-buttons-width:100%;}
+		return [KarlsenDialog.styles, css`
+			.container{max-height:var(--karlsen-dialog-container-max-height, 600px)}
+			:host([mode="create"]) .container{max-height:var(--karlsen-dialog-container-max-height, 500px)}
+			:host([mode="init"]) .container{max-height:var(--karlsen-dialog-container-max-height, 200px)}
+			:host([mode="recover"]) .container{max-height:var(--karlsen-dialog-container-max-height, 450px)}
+			.buttons{justify-content:center;--karlsen-dialog-buttons-width:100%;}
 			:host([mode="init"]) .buttons{justify-content:center}
 			:host([mode="open"]) .inner-body{padding:0px 30px;}
 
@@ -113,7 +113,7 @@ class KaspaOpenDialog extends KaspaDialog{
 		return html`
 			${this.hideLogo?'': html`
 			<div>
-				<img class="big-logo" src="/resources/images/kaspa.png" />
+				<img class="big-logo" src="/resources/images/karlsen.png" />
 			</div>`}
 			<div class="sub-heading" is="i18n-div">Unlock the wallet with your password:</div>
 			<flow-input class="password full-width" outer-border value="${pass}"
@@ -269,4 +269,4 @@ class KaspaOpenDialog extends KaspaDialog{
 	}
 }
 
-KaspaOpenDialog.define("kaspa-open-dialog");
+KarlsenOpenDialog.define("karlsen-open-dialog");

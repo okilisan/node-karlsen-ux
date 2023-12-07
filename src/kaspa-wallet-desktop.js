@@ -1,7 +1,7 @@
-import {html, css, FlowFormat, i18n, T} from './kaspa-wallet-ui.js';
-import {KaspaWalletMobile} from './kaspa-wallet-mobile.js';
+import {html, css, FlowFormat, i18n, T} from './karlsen-wallet-ui.js';
+import {KarlsenWalletMobile} from './karlsen-wallet-mobile.js';
 
-export class KaspaWalletDesktop extends KaspaWalletMobile{
+export class KarlsenWalletDesktop extends KarlsenWalletMobile{
 
 	static get properties() {
 		return {
@@ -9,10 +9,10 @@ export class KaspaWalletDesktop extends KaspaWalletMobile{
 	}
 
 	static get styles(){
-		return [KaspaWalletMobile.styles, css`
+		return [KarlsenWalletMobile.styles, css`
 			:host{overflow:hidden}
 			.container{
-				padding:var(--kaspa-wallet-container-padding, 15px);
+				padding:var(--karlsen-wallet-container-padding, 15px);
 				position:relative;flex:1;overflow:auto
 			}
 			:host([locked]) .container{
@@ -20,7 +20,7 @@ export class KaspaWalletDesktop extends KaspaWalletMobile{
 			}
 			.wallet-warning{
 				max-width:640px;margin:5px auto;padding:10px;text-align:center;
-				background-color:var(--kaspa-wallet-warning-bg, #fdf8e4);
+				background-color:var(--karlsen-wallet-warning-bg, #fdf8e4);
 			}
 			.heading{margin:5px 15px 25px;font-size:1.5rem;}
 			flow-btn{vertical-align:bottom;margin:5px;}
@@ -39,7 +39,7 @@ export class KaspaWalletDesktop extends KaspaWalletMobile{
 			}
 			.right-area{
 				flex:6;margin-left:20px;margin-right:20px;max-width:750px;
-				height:var(--kaspa-wallet-right-area-height, calc(100vh - 122px));
+				height:var(--karlsen-wallet-right-area-height, calc(100vh - 122px));
 				display:flex;flex-direction:column;
 				min-width:600px;
 			}
@@ -89,9 +89,9 @@ export class KaspaWalletDesktop extends KaspaWalletMobile{
 			}
 			.top-menu{
 				display:flex;align-items:center;
-				position:var(--kaspa-wallet-top-menu-position, absolute);
-				right:var(--kaspa-wallet-top-menu-right, 20px);
-				top:var(--kaspa-wallet-top-menu-top, -4px);
+				position:var(--karlsen-wallet-top-menu-position, absolute);
+				right:var(--karlsen-wallet-top-menu-right, 20px);
+				top:var(--karlsen-wallet-top-menu-top, -4px);
 				z-index:2;
 				background-color:var(--flow-background-color, #FFF);
 			}
@@ -103,7 +103,7 @@ export class KaspaWalletDesktop extends KaspaWalletMobile{
 			}
 			.tabs-container{border-top:0px;}
 			.header{
-				border-bottom:var(--kaspa-wallet-header-border-bottom, --2px solid var(--kaspa-wallet-tab-border-top-color, var(--flow-primary-color)));
+				border-bottom:var(--karlsen-wallet-header-border-bottom, --2px solid var(--karlsen-wallet-tab-border-top-color, var(--flow-primary-color)));
 			}
 		`];
 	}
