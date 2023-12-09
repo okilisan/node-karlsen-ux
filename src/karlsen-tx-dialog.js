@@ -20,7 +20,7 @@ class KarlsenTXDialog extends KarlsenDialog{
 				--k-pagination-border-color:var(--flow-primary-color);
 			}
 			.pagination a{
-				border: var(--flow-btn-border, 2px solid var(--flow-border-color, var(--flow-primary-color, rgba(0,151,115,1))));
+				border: var(--flow-btn-border, 2px solid var(--flow-border-color, var(--flow-primary-color, #4C5157)));
 				border-radius:var(--flow-btn-radius, 8px);
 				border-width:var(--flow-btn-border-width, 2px);
 			}
