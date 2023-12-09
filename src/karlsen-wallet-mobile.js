@@ -33,7 +33,7 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 			}
 
 			.pagination a{
-				border: var(--flow-btn-border, 2px solid var(--flow-border-color, var(--flow-primary-color, rgba(0,151,115,1))));
+				border: var(--flow-btn-border, 2px solid var(--flow-border-color, var(--flow-primary-color, #4C5157)));
 				border-radius:var(--flow-btn-radius, 8px);
 				border-width:var(--flow-btn-border-width, 2px);
 				padding:var(--flow-page-btn-padding, var(--flow-btn-padding, 5px))
@@ -177,7 +177,7 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 			.recent-transactions .tx-rows{max-height:none;}
 			flow-expandable [slot="title"] fa-icon{
 				--fa-icon-size: var(--flow-expandable-icon-box-svg-width,24px);
-				--fa-icon-color:var(--flow-primary-color, rgba(0,151,115,1));
+				--fa-icon-color:var(--flow-primary-color, #4C5157);
 			    margin-right: var(--flow-expandable-icon-box-svg-margin-right,8px);
 			}
 			flow-expandable [slot="title"].center-icon{
@@ -389,12 +389,12 @@ export class KarlsenWalletMobile extends KarlsenWalletUI{
 								<fa-icon icon="caret-right"></fa-icon>
 								<span is="i18n-span">DEVELOPER INFO</span>
 							</div>
-							<div class="badge"><span is="i18n-span">Karlsen Core 4 KLS:</span> ${window.PWA_MODULES['@karlsen/core-lib']}</div>
-							<div class="badge"><span is="i18n-span">Karlsen Wallet Framework 4 KLS:</span> ${window.PWA_MODULES['@karlsen/wallet']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen Core KLS:</span> ${window.PWA_MODULES['@karlsen/core-lib']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen Wallet Framework KLS:</span> ${window.PWA_MODULES['@karlsen/wallet']}</div>
 							<div class="badge"><span is="i18n-span">Karlsen gRPC:</span> ${window.PWA_MODULES['@karlsen/grpc']}</div>
 							<div class="badge"><span is="i18n-span">Karlsen gRPC Relay:</span> ${window.PWA_MODULES['@karlsen/grpc-web']}</div>
-							<div class="badge"><span is="i18n-span">Karlsen UX 4 KLS:</span> ${window.PWA_MODULES['@karlsen/ux']}</div>
-							<div class="badge"><span is="i18n-span">Flow UX 4 KLS:</span> ${window.PWA_MODULES['@aspectron/flow-ux']}</div>
+							<div class="badge"><span is="i18n-span">Karlsen UX KLS:</span> ${window.PWA_MODULES['@karlsen/ux']}</div>
+							<div class="badge"><span is="i18n-span">Flow UX KLS:</span> ${window.PWA_MODULES['@aspectron/flow-ux']}</div>
 						</flow-expandable>
 
 					</div>
