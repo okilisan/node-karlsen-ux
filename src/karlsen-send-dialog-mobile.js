@@ -1,18 +1,18 @@
 import {
-	html, css, KaspaDialog, askForPassword, KAS,
+	html, css, KarlsenDialog, askForPassword, KLS,
 	formatForMachine, T, i18n, formatForHuman, getLocalWallet
-} from './kaspa-dialog.js';
-import {Wallet} from '@kaspa/wallet-worker';
+} from './karlsen-dialog.js';
+import {Wallet} from '@karlsen/wallet-worker';
 const pass = "";
 
-class KaspaSendDialogMobile extends KaspaDialog{
+class KarlsenSendDialogMobile extends KarlsenDialog{
 	static get properties(){
 		return {
 			address:{type:String}
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, 
+		return [KarlsenDialog.styles, 
 		css`
 			.container{
 				border-radius:0px;width:100%;height:100%;border:0px;
@@ -122,9 +122,9 @@ class KaspaSendDialogMobile extends KaspaDialog{
 		<div class="estimate-tx">
 			<table>
 				${txSize?html`<tr><td is="i18n-td">Transaction Size</td><td>${txSize.toFileSize()}</td></tr>`:''}
-				${dataFee?html`<tr><td is="i18n-td">Data Fee</td><td>${KAS(dataFee)} KLS</td></tr>`:''}
-				${fee?html`<tr><td is="i18n-td">Total Fee</td><td>${KAS(fee)} KLS</td></tr>`:''}
-				${totalAmount?html`<tr><td is="i18n-td">Total Amount</td><td> ${KAS(totalAmount)} KLS</td></tr>`:''}
+				${dataFee?html`<tr><td is="i18n-td">Data Fee</td><td>${KLS(dataFee)} KLS</td></tr>`:''}
+				${fee?html`<tr><td is="i18n-td">Total Fee</td><td>${KLS(fee)} KLS</td></tr>`:''}
+				${totalAmount?html`<tr><td is="i18n-td">Total Amount</td><td> ${KLS(totalAmount)} KLS</td></tr>`:''}
 			</table>
 		</div>
 		`
@@ -277,7 +277,7 @@ class KaspaSendDialogMobile extends KaspaDialog{
     		return
     	if(estimate.fee > this.alertFeeAmount){
 			let msg = i18n.t('Transaction Fee ([n] KLS) is very large.');
-			msg = msg.replace('[n]', KAS(estimate.fee));
+			msg = msg.replace('[n]', KLS(estimate.fee));
     		let {btn} = await FlowDialog.alert("Warning", 
     			html`${msg}`,
     			'',
@@ -316,4 +316,4 @@ class KaspaSendDialogMobile extends KaspaDialog{
     }
 }
 
-KaspaSendDialogMobile.define("kaspa-send-dialog-mobile");
+KarlsenSendDialogMobile.define("karlsen-send-dialog-mobile");

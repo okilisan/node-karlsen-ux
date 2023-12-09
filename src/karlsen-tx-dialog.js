@@ -1,17 +1,17 @@
 import {
-	html, css, KaspaDialog, KAS, txListStyle,
+	html, css, KarlsenDialog, KLS, txListStyle,
 	paginationStyle, buildPagination,
 	renderPagination, T
-} from './kaspa-dialog.js';
+} from './karlsen-dialog.js';
 
-class KaspaTXDialog extends KaspaDialog{
+class KarlsenTXDialog extends KarlsenDialog{
 	static get properties(){
 		return {
 			skip:{type:Number}
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, paginationStyle, txListStyle,
+		return [KarlsenDialog.styles, paginationStyle, txListStyle,
 		css`
 			:host{
 				position:fixed;
@@ -20,18 +20,18 @@ class KaspaTXDialog extends KaspaDialog{
 				--k-pagination-border-color:var(--flow-primary-color);
 			}
 			.pagination a{
-				border: var(--flow-btn-border, 2px solid var(--flow-border-color, var(--flow-primary-color, rgba(0,151,115,1))));
+				border: var(--flow-btn-border, 2px solid var(--flow-border-color, var(--flow-primary-color, #4C5157)));
 				border-radius:var(--flow-btn-radius, 8px);
 				border-width:var(--flow-btn-border-width, 2px);
 			}
 			.pagination-box{
-				padding:var(--kaspa-pagination-box-padding, 10px 5px;);
+				padding:var(--karlsen-pagination-box-padding, 10px 5px;);
 			}
 			.inner-body, .buttons{width:calc(100% - 5px)}
 			.inner-body{max-width:100%;padding:0px;}
 			.container{
-				max-height:var(--kaspa-dialog-container-max-height, 90%);
-				max-width:var(--kaspa-dialog-container-max-width, 90%)
+				max-height:var(--karlsen-dialog-container-max-height, 90%);
+				max-width:var(--karlsen-dialog-container-max-width, 90%)
 			}
 			.buttons{justify-content:flex-end;align-items:center}
 			.spinner{margin-right:20px}
@@ -103,4 +103,4 @@ class KaspaTXDialog extends KaspaDialog{
     }
 }
 
-KaspaTXDialog.define("kaspa-tx-dialog");
+KarlsenTXDialog.define("karlsen-tx-dialog");

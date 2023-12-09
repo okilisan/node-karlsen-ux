@@ -1,18 +1,18 @@
 {
-  "name": "@kaspa/ux",
+  "name": "@karlsen/ux",
   "version": "1.0.30",
   "description": "Karlsen Wallet User Interface Framework",
-  "main": "kaspa-ux.js",
+  "main": "karlsen-ux.js",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aspectron/kaspa-ux"
+    "url": "git+https://github.com/karlsen-network/node-karlsen-ux"
   },
   "keywords": [],
   "dependencies": {},
   "files": [
-    "kaspa-ux.js",
-    "kaspa-ux.css",
+    "karlsen-ux.js",
+    "karlsen-ux.css",
     "src",
     "README.md",
     "LICENSE",

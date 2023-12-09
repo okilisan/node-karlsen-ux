@@ -1,6 +1,6 @@
-import {html, css, KaspaDialog, T, i18n} from './kaspa-dialog.js';
+import {html, css, KarlsenDialog, T, i18n} from './karlsen-dialog.js';
 
-class KaspaWalletReceiveDialog extends KaspaDialog{
+class KarlsenWalletReceiveDialog extends KarlsenDialog{
 	static get properties(){
 		return {
 			qrdata:{type:String},
@@ -8,7 +8,7 @@ class KaspaWalletReceiveDialog extends KaspaDialog{
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, 
+		return [KarlsenDialog.styles, 
 		css`
 			.container{max-height:400px}
 			.buttons{justify-content:center;}
@@ -53,4 +53,4 @@ class KaspaWalletReceiveDialog extends KaspaDialog{
 	}
 }
 
-KaspaWalletReceiveDialog.define("kaspa-wallet-receive-dialog");
+KarlsenWalletReceiveDialog.define("karlsen-wallet-receive-dialog");

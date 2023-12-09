@@ -1,10 +1,10 @@
 import { i18n } from './flow-ux.js';
 import {
-	html, css, KaspaDialog, KLS,
+	html, css, KarlsenDialog, KLS,
 	formatForMachine, formatForHuman
-} from './kaspa-dialog.js';
+} from './karlsen-dialog.js';
 
-class KaspaT9Dialog extends KaspaDialog{
+class KarlsenT9Dialog extends KarlsenDialog{
 	static get properties(){
 		return {
 			value:{type:String},
@@ -13,10 +13,10 @@ class KaspaT9Dialog extends KaspaDialog{
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, css`
+		return [KarlsenDialog.styles, css`
 			.container{
 				width:100%;height:100%;padding:0px;
-				max-height:var(--kaspa-dialog-container-max-height, 600px);
+				max-height:var(--karlsen-dialog-container-max-height, 600px);
 			}
 			flow-t9{width:215px;margin:auto;display:block;}
 			.buttons{
@@ -78,4 +78,4 @@ class KaspaT9Dialog extends KaspaDialog{
     }
 }
 
-KaspaT9Dialog.define("kaspa-t9-dialog");
+KarlsenT9Dialog.define("karlsen-t9-dialog");
