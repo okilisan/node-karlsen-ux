@@ -1,9 +1,9 @@
 import {
-	html, css, KaspaDialog, T, KAS,
+	html, css, KarlsenDialog, T, KLS,
 	formatForMachine, formatForHuman
-} from './kaspa-dialog.js';
+} from './karlsen-dialog.js';
 
-class KaspaReceiveDialogMobile extends KaspaDialog{
+class KarlsenReceiveDialogMobile extends KarlsenDialog{
 	static get properties(){
 		return {
 			address:{type:String},
@@ -11,7 +11,7 @@ class KaspaReceiveDialogMobile extends KaspaDialog{
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, 
+		return [KarlsenDialog.styles, 
 		css`
 			.container{
 				border-radius:0px;width:100%;height:100%;border:0px;
@@ -118,4 +118,4 @@ class KaspaReceiveDialogMobile extends KaspaDialog{
     }
 }
 
-KaspaReceiveDialogMobile.define("kaspa-receive-dialog-mobile");
+KarlsenReceiveDialogMobile.define("karlsen-receive-dialog-mobile");

@@ -1,22 +1,22 @@
 import { i18n, T } from './flow-ux.js';
 import {
-	html, css, KaspaDialog, askForPassword, KAS,
+	html, css, KarlsenDialog, askForPassword, KLS,
 	formatForMachine, getLocalWallet
-} from './kaspa-dialog.js';
+} from './karlsen-dialog.js';
 const pass = "";
-import {Wallet} from '@kaspa/wallet-worker';
+import {Wallet} from '@karlsen/wallet-worker';
 
-class KaspaSendDialog extends KaspaDialog{
+class KarlsenSendDialog extends KarlsenDialog{
 	static get properties(){
 		return {
 			address:{type:String}
 		}
 	}
 	static get styles(){
-		return [KaspaDialog.styles, 
+		return [KarlsenDialog.styles, 
 		css`
 			.container{
-				max-height:var(--kaspa-dialog-container-max-height, 670px);
+				max-height:var(--karlsen-dialog-container-max-height, 670px);
 			}
 			.buttons{justify-content:flex-end;align-items:center}
 			.spinner{margin-right:20px}
@@ -76,9 +76,9 @@ class KaspaSendDialog extends KaspaDialog{
 		<div class="estimate-tx">
 			<table>
 				${txSize?html`<tr><td is="i18n-td">Transaction Size</td><td>${txSize.toFileSize()}</td></tr>`:''}
-				${dataFee?html`<tr><td is="i18n-td">Data Fee</td><td>${KAS(dataFee)} KLS</td></tr>`:''}
-				${fee?html`<tr><td is="i18n-td">Total Fee</td><td>${KAS(fee)} KLS</td></tr>`:''}
-				${totalAmount?html`<tr is="i18n-td"><td>Total Amount</td><td> ${KAS(totalAmount)} KLS</td></tr>`:''}
+				${dataFee?html`<tr><td is="i18n-td">Data Fee</td><td>${KLS(dataFee)} KLS</td></tr>`:''}
+				${fee?html`<tr><td is="i18n-td">Total Fee</td><td>${KLS(fee)} KLS</td></tr>`:''}
+				${totalAmount?html`<tr is="i18n-td"><td>Total Amount</td><td> ${KLS(totalAmount)} KLS</td></tr>`:''}
 			</table>
 		</div>
 		`
@@ -184,7 +184,7 @@ class KaspaSendDialog extends KaspaDialog{
     		return
     	if(estimate.fee > this.alertFeeAmount){
 			let msg = i18n.t('Transaction Fee ([n] KLS) is too large.');
-			msg = msg.replace('[n]', KAS(estimate.fee));
+			msg = msg.replace('[n]', KLS(estimate.fee));
     		let {btn} = await FlowDialog.alert("Warning", 
     			html`${msg}`,
     			'',
@@ -221,4 +221,4 @@ class KaspaSendDialog extends KaspaDialog{
     }
 }
 
-KaspaSendDialog.define("kaspa-send-dialog");
+KarlsenSendDialog.define("karlsen-send-dialog");
